@@ -1,210 +1,145 @@
 .section {
+  padding: 120px 0;
+  background: #0b0f1a; /* Your deep dark blue */
+  position: relative;
+  overflow: hidden;
+  color: #ffffff; /* Global white text */
+}
+
+/* Background "Ghost" text - made it slightly more visible but still subtle */
+.bgText {
+  position: absolute;
+  top: 5%;
+  left: -2%;
+  font-size: 20rem;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.03); 
+  z-index: 0;
+  user-select: none;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 8%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Header Styling */
+.tagLine {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-left: 10rem;
-  margin-right: 40rem;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    margin-left: 2rem;
-  margin-right: 7rem;
-  }
-
-  @media(min-width:501px) and (max-width: 600px) {
-    margin-left: 3rem;
-    margin-right: 9rem;
-
-  }
-  @media(min-width:601px) and (max-width: 700px) {
-    margin-left: 4rem;
-  margin-right: 14rem;
-
-  }
-  @media(min-width:701px) and (max-width: 800px) {
-    margin-left: 5rem;
-  margin-right: 18rem;
-
-  }
-  @media(min-width:801px) and (max-width: 900px) {
-    margin-left: 7rem;
-  margin-right: 23rem;
-
-  }
-
-@media (min-width:901px) and (max-width: 970px) {
-  margin-left: 8rem;
-  margin-right: 30rem;
-  
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
 }
 
+.number { font-family: monospace; color: #4a90c6; font-weight: bold; font-size: 1.4rem; }
+.line { width: 40px; height: 1px; background: #4a90c6; } /* Accent colored line */
+.category { font-size: 1rem; letter-spacing: 4px; color: #4a90c6; font-weight: 600; }
 
-  
+.mainTitle {
+  font-size: clamp(3rem, 6vw, 5rem); /* Bigger Title */
+  line-height: 1.1;
+  max-width: 850px;
+  margin-bottom: 5rem;
+  color: #ffffff; /* Pure white */
 }
-.section > h1 {
-  margin-top: 5rem;
-  margin-bottom: 2.5rem;
-  font-size: 5rem;
-  background: linear-gradient(rgba(0, 82, 115, 0.161), rgb(74, 144, 198));
-  -webkit-background-clip: text;
-  color: transparent;
 
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 2.5rem;
-  }
+.mainTitle span { color: #4a90c6; }
 
-  @media(min-width:501px) and (max-width: 600px) {
-    font-size: 2.9rem;
-
-
-  }
-  @media(min-width:601px) and (max-width: 700px) {
-    font-size: 3.3rem;
-   
-
-  }
-  @media(min-width:701px) and (max-width: 800px) {
-    font-size: 4rem;
-
-  }
-  @media(min-width:801px) and (max-width: 900px) {
-    font-size: 4.3rem;
-
-  }
-
-@media (min-width:901px) and (max-width: 970px) {
-  font-size: 4.6rem;
-  
+/* Grid Layout */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 6rem;
+  align-items: flex-start;
 }
-}
-.name {
-  color: rgba(32, 173, 212, 0.995);
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-}
-.info {
-  font-size: 1.5rem;
-  color: rgb(100 116 139 / 1);
-  line-height: 2.5rem;
 
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 1.2rem;
-  }
-
-  @media(min-width:501px) and (max-width: 600px) {
-    font-size: 1.3rem;
-
-
-  }
-  @media(min-width:601px) and (max-width: 700px) {
-    font-size: 1.35rem;
-   
-
-  }
-  @media(min-width:701px) and (max-width: 800px) {
-    font-size: 1.4rem;
-
-  }
- 
+.leadText {
+  font-size: 2.2rem; /* Larger font */
+  color: #ffffff; /* Pure white for high impact */
+  margin-bottom: 2rem;
+  line-height: 1.4;
+  font-weight: 500;
 }
-.skillscontiner {
-  display: flex;
-  flex-direction: column;
-  padding: 2.5rem 0;
-}
-.skillscontiner > h3 {
-  font-size: 3rem;
-  background: linear-gradient(
-    rgb(77, 77, 212),
-    rgb(218, 218, 149),
-    rgb(77, 67, 67)
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.blockcontiner {
-  
-  width: 8rem;
-  border-radius: 10%;
-  margin-left: 3rem;
-  margin-top: 3rem;
-}
-.blockcontiner:hover {
-  transform: translateX(-0.3rem);
-  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.5);
 
-  
- 
+.bodyText {
+  font-size: 1.4rem; /* Scaled up from 1.1rem */
+  color: #e2e8f0; /* Much brighter gray (Slate 200) */
+  line-height: 1.7;
+  margin-bottom: 3rem;
 }
-.skill {
+
+.badgeContainer {
   display: flex;
   flex-wrap: wrap;
-  padding-top: 5rem;
-  /* width: 50rem; */
-}
-.img {
-  width: 9rem;
-  padding-right: 4rem;
-  padding-top: 3rem;
-  padding-bottom: 4rem;
-  margin-left: 1rem;
+  gap: 1.2rem;
 }
 
+.badge {
+  padding: 8px 20px;
+  border: 1px solid #4a90c6;
+  background: rgba(74, 144, 198, 0.1); /* Subtle blue tint */
+  border-radius: 100px;
+  font-size: 0.9rem; /* Bigger badge text */
+  font-weight: 700;
+  color: #ffffff; /* White text on blue border */
+  letter-spacing: 1px;
+}
 
-.experincecontiner {
-  padding: 4rem;
+/* Tech Card / Bento Style */
+.techCard {
+  background: rgba(15, 23, 42, 0.8); /* Solid dark blue */
+  border: 1px solid rgba(74, 144, 198, 0.3); /* Blue tinted border */
+  padding: 3rem;
+  border-radius: 30px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
 }
-.experincecontiner > h3 {
-  font-size: 2rem;
-  background: linear-gradient(
-    rgb(77, 77, 212),
-    rgb(212, 212, 78),
-    rgb(47, 45, 45)
-  );
-  -webkit-background-clip: text;
-  color: transparent;
+
+.techCard h3 {
+  font-size: 1.1rem;
+  letter-spacing: 3px;
+  color: #ffffff; /* High contrast header */
+  margin-bottom: 3rem;
+  text-align: center;
+  font-weight: 700;
 }
-.experinceinfo {
-  padding: 3rem 0;
-  font-size: 1.5rem;
-  color: rgb(100 116 139 / 1);
-  line-height: 2.5rem;
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
 }
-.verticalline {
-  display: flex;
+
+.skillNode img {
+  width: 50px; /* Slightly larger */
+  filter: brightness(1.2); /* Make logos pop */
+  transition: 0.3s;
 }
-.experinceLine {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+.skillNode:hover img {
+  transform: scale(1.1);
+  filter: brightness(1.5);
 }
-.experinceLine img {
-  width: 60%;
-  height: 60%;
-  object-fit: contain;
+
+.tooltip {
+  position: absolute;
+  bottom: -35px;
+  background: #ffffff; /* White background for tooltip */
+  color: #0b0f1a; /* Dark text for tooltip */
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 4px;
+  opacity: 0;
+  transition: 0.3s;
 }
-.experincetitle {
-  color: rgb(100 116 139 / 1);
-  font-size: 2rem;
-  line-height: 1.2rem;
-  width: 20rem;
-  margin-bottom: 2rem;
-  padding-top: 2rem;
-}
-.points {
-  font-size: 1.4rem;
-  color: rgb(35, 36, 38);
-  padding-left: 2.2rem;
-}
-.points > :not([hidden]) ~ :not([hidden]) {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-  list-style-type: disc;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-.points > li {
-  line-height: 2rem;
-  padding-left: 0.2rem;
+
+.skillNode:hover .tooltip { opacity: 1; bottom: -25px; }
+
+@media (max-width: 1000px) {
+  .mainGrid { grid-template-columns: 1fr; }
+  .bgText { display: none; }
+  .section { padding: 80px 0; }
 }

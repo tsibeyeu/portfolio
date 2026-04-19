@@ -1,97 +1,63 @@
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
-import "react-vertical-timeline-component/style.min.css";
-import {skills,experiences} from "../component/datas/data";
+import React from "react";
+import { skills } from "../component/datas/data";
 import style from "./About.module.css";
 
 const About = () => {
   return (
     <section className={style.section}>
-      <h1 className>
-        Hello I'm{" "}
-        <span className={style.name} >
-          Tsion
-        </span>
-      </h1>
-      <div className={style.info}>
-        <p>
-          curious learner and creative team player, interesting in the job role
-          of Software Engineer . where I can utilise my understanding of coding
-          and software development to efficiently fulfill the requirements of
-          clients and customers.
-        </p>
-      </div>
-      <div className={style.skillscontiner}>
-        <h3 > My Skills</h3>
-        <div className={style.skill}>
-          {skills.map((skill) => (
-            <div  className={style.blockcontiner}>
-              <div  />
-              <div className={style.imgskill}>
-                <img
-                  src={skill.imageUrl}
-                  alt={skill.name}
-                  className={style.img}
-                />
+      {/* Decorative background text */}
+      <div className={style.bgText}>ABOUT</div>
+
+      <div className={style.container}>
+        <header className={style.header}>
+          <div className={style.tagLine}>
+            <span className={style.number}>02</span>
+            <div className={style.line}></div>
+            <span className={style.category}>WHO AM I</span>
+          </div>
+          <h2 className={style.mainTitle}>
+            Engineering digital experiences with <span>precision.</span>
+          </h2>
+        </header>
+
+        <div className={style.mainGrid}>
+          {/* Personality & Pitch */}
+          <div className={style.descriptionSide}>
+            <p className={style.leadText}>
+              I’m a <strong>Full Stack Engineer</strong> bridge-building between
+              robust backend architecture and pixel-perfect frontends.
+            </p>
+            <p className={style.bodyText}>
+              Specializing in the <strong>MERN Stack</strong> and{" "}
+              <strong>Laravel</strong>, I transform complex business
+              requirements into scalable, high-performance applications. My
+              focus is on writing code that is as clean as the interfaces I
+              design.
+            </p>
+
+            <div className={style.badgeContainer}>
+              <span className={style.badge}>MERN SPECIALIST</span>
+              <span className={style.badge}>LARAVEL EXPERT</span>
+              <span className={style.badge}>UI/UX DRIVEN</span>
+            </div>
+          </div>
+
+          {/* Tech Arsenal (The "Bento" Skill Box) */}
+          <div className={style.techSide}>
+            <div className={style.techCard}>
+              <h3>THE ARSENAL</h3>
+              <div className={style.skillsGrid}>
+                {skills.map((skill, index) => (
+                  <div key={index} className={style.skillNode}>
+                    <img src={skill.imageUrl} alt={skill.name} />
+                    <div className={style.tooltip}>{skill.name}</div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
+          </div>
         </div>
       </div>
-      <div className={style.experincecontiner}>
-        <h3 > Some Work Experience</h3>
-        <div className={style.experinceinfo}>
-          I've been leveling up my skills and teaming up with smart people by
-          implementing different project using Frontend and Backend skills.some
-          of my experience Here's the rundown:
-        </div>
-        <div className={style.verticalline} >
-          <VerticalTimeline>
-            {experiences.map((experience) => (
-              <VerticalTimelineElement
-                // date={experience.date}
-                icon={
-                  <div className={style.experinceLine}>
-                    <img
-                      
-                      src={experience.icon}
-                      alt={experience.icon}
-                    />
-                  </div>
-                }
-                iconStyle={{ background: experience.iconBg }}
-                contentStyle={{
-                  borderBottom: "8px",
-                  borderBottomColor: experience.iconBg,
-                  borderBottomStyle: "solid",
-                  boxShadow: "none",
-                }}
-              >
-                <div>
-                  <h3 className={style.experincetitle}>
-                    {experience.title}
-                  </h3>
-                  <p></p>
-                </div>
-                <ul className={style.points}>
-                  {experience.points.map((point, index) => (
-                    <li
-                      key={index}
-                      
-                    >
-                      {point}
-                    </li>
-                  ))}
-                </ul>
-              </VerticalTimelineElement>
-            ))}
-          </VerticalTimeline>
-        </div>
-      </div>
-      <hr className="border-slate-100 shadow"/>
-{/* <CTA/> */}
     </section>
   );
 };

@@ -1,0 +1,396 @@
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  color: #fff;
+}
+
+/* Background Image & Overlay */
+.bgWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.bgImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.5);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.9));
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 8%;
+  z-index: 10;
+  align-items: center;
+}
+
+/* --- LEFT SIDE: TEXT --- */
+.name {
+  font-size: clamp(5rem, 15vw, 9rem);
+  font-weight: 900;
+  line-height: 0.9;
+  letter-spacing: -4px;
+  margin-bottom: 2rem;
+}
+
+.name span {
+  -webkit-text-stroke: 1px #4a90c6;
+  color: transparent;
+}
+
+.typewriterContainer {
+  margin-bottom: 1rem;
+}
+
+.typingText {
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  color: #4a90c6;
+  font-family: 'Courier New', monospace;
+  border-right: 4px solid #4a90c6;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+  animation: typing 3s steps(22, end) forwards, blink 0.8s infinite;
+}
+
+.description {
+  font-size: 1.4rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 2rem 0 3rem 0;
+  max-width: 500px;
+}
+
+/* --- RIGHT SIDE: 3D GLASS CARD --- */
+.rightSide {
+  display: flex;
+  justify-content: flex-end;
+  perspective: 1000px;
+}
+/* Card inner container */
+.cardContent {
+  text-align: center;
+  padding: 2rem;
+}
+
+.greeting {
+  display: block;
+  font-size: 2.5rem; /* Large enough to read but fits the card */
+  font-weight: 800;
+  color: #ffffff;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 0 15px rgba(74, 144, 198, 0.4);
+}
+
+.subText {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 1px;
+}
+
+/* Update the visual card to ensure content is centered */
+.visualCard {
+  width: 320px;
+  height: 420px;
+  background: rgba(15, 23, 42, 0.6); /* Slightly darker for text contrast */
+  border: 1px solid rgba(74, 144, 198, 0.3); 
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  transform: rotateY(-10deg) rotateX(5deg);
+  animation: float 6s ease-in-out infinite;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.visualCard span {
+  font-size: 6rem;
+  font-weight: 900;
+  color: #4a90c6;
+  text-shadow: 0 0 20px rgba(74, 144, 198, 0.5);
+  opacity: 0.8;
+}
+
+.glow {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, #4a90c6 0%, transparent 70%);
+  filter: blur(80px);
+  z-index: -1;
+  opacity: 0.4;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* --- INTERACTIVE ELEMENTS --- */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 2rem;
+}
+
+.socialLinks a {
+  color: #fff;
+  transition: 0.3s;
+}
+
+.socialLinks a:hover {
+  color: #4a90c6;
+  transform: translateY(-5px);
+}
+
+.resumeBtn {
+  padding: 1.2rem 3rem;
+  background: #4a90c6;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.resumeBtn:hover {
+  background: #3b7fb3;
+  box-shadow: 0 10px 20px rgba(74, 144, 198, 0.3);
+}
+
+/* --- ANIMATIONS --- */
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent } }
+
+@keyframes float {
+  0%, 100% { transform: rotateY(-10deg) rotateX(5deg) translateY(0); }
+  50% { transform: rotateY(-10deg) rotateX(5deg) translateY(-25px); }
+}
+
+/* --- MOBILE --- */
+@media (max-width: 1024px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .rightSide { display: none; }
+  .name { font-size: 5rem; letter-spacing: -2px; }
+  .ctaGroup { 
+    flex-direction: column; 
+    gap: 2rem;
+  }
+  .description { margin: 2rem auto; }
+}
+
+/* --- NON-CLICHE BUTTON (Liquid Style) --- */
+.modernBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 10px 0;
+  transition: all 0.4s ease;
+}
+
+.btnCircle {
+  width: 50px;
+  height: 50px;
+  border: 1px solid rgba(74, 144, 198, 0.5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.76, 0, 0.24, 1);
+  background: rgba(74, 144, 198, 0.1);
+}
+
+.modernBtn:hover .btnCircle {
+  width: 100%;
+  border-radius: 30px;
+  background: #4a90c6;
+  position: absolute;
+  z-index: -1;
+}
+
+.modernBtn:hover .btnText {
+  padding-left: 25px;
+  color: #fff;
+}
+
+/* --- MINIMALIST TEXT SOCIALS --- */
+.minimalSocials {
+  display: flex;
+  gap: 2rem;
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
+  padding-left: 2rem;
+}
+
+.minimalSocials a {
+  text-decoration: none;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+  transition: 0.3s;
+}
+
+.minimalSocials a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background: #4a90c6;
+  transition: 0.4s;
+}
+
+.minimalSocials a:hover {
+  color: #4a90c6;
+}
+
+.minimalSocials a:hover::after {
+  width: 100%;
+}
+
+/* --- UPDATED CTA GROUP --- */
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 4rem; /* More breathing room */
+  margin-top: 2rem;
+}
+
+/* Increase general description size */
+.description {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem); /* Larger, readable description */
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  margin: 2.5rem 0 4rem 0;
+  max-width: 650px;
+}
+
+/* --- PREMIUM CTA BUTTON --- */
+.premiumBtn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.5rem 3.5rem;
+  background: #4a90c6;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 100px;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  overflow: hidden;
+}
+
+.btnArrow {
+  font-size: 1.8rem;
+  transition: transform 0.4s ease;
+}
+
+.premiumBtn:hover {
+  background: #ffffff;
+  color: #1e293b;
+  transform: scale(1.05);
+}
+
+.premiumBtn:hover .btnArrow {
+  transform: translateX(10px);
+}
+
+/* --- BOLD MINIMALIST SOCIALS --- */
+.boldSocials {
+  display: flex;
+  gap: 3rem;
+  margin-left: 2rem;
+}
+
+.boldSocials a {
+  text-decoration: none;
+  font-size: 1.3rem; /* Scaled up from standard icon size */
+  font-weight: 900;
+  color: #ffffff;
+  position: relative;
+  transition: 0.3s;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Modern hover reveal */
+.boldSocials a::before {
+  content: attr(data-name);
+  position: absolute;
+  top: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: #4a90c6;
+  opacity: 0;
+  transition: 0.3s;
+  letter-spacing: 2px;
+}
+
+.boldSocials a:hover {
+  color: #4a90c6;
+}
+
+.boldSocials a:hover::before {
+  opacity: 1;
+  top: -20px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .ctaGroup {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .boldSocials {
+    margin-left: 0;
+    justify-content: center;
+  }
+}
+
+

@@ -1,0 +1,119 @@
+.footerSection {
+  padding: 80px 0 60px;
+  background: #0b0f1a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 8%;
+}
+
+/* --- SEPARATOR --- */
+.line {
+  width: 1px;
+  height: 120px;
+  background: linear-gradient(to bottom, rgba(74, 144, 198, 0), #4a90c6);
+  margin-bottom: 60px;
+}
+
+/* --- CTA PORTION --- */
+.ctaWrap {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+.ctaText {
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-weight: 900;
+  color: #94a3b8;
+  margin-bottom: 3rem;
+  line-height: 1.1;
+}
+
+.ctaText span { color: #ffffff; }
+
+.modernBtn {
+  display: inline-block;
+  padding: 1.2rem 3.5rem;
+  background: #ffffff;
+  color: #0b0f1a;
+  text-decoration: none;
+  border-radius: 100px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.modernBtn:hover {
+  background: #4a90c6;
+  color: #fff;
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(74, 144, 198, 0.3);
+}
+
+/* --- BOTTOM NAV PORTION --- */
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 60px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: #fff;
+}
+
+.logo span { color: #4a90c6; }
+
+.tagline {
+  font-family: monospace;
+  font-size: 0.8rem;
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.linkSide {
+  text-align: right;
+}
+
+.socials {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.socials a {
+  color: #94a3b8;
+  font-size: 1.5rem;
+  transition: 0.3s;
+}
+
+.socials a:hover { color: #4a90c6; }
+
+.copy {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .footerBottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 3rem;
+  }
+  .linkSide { text-align: center; }
+  .socials { justify-content: center; }
+}

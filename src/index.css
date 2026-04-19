@@ -1,51 +1,53 @@
+:root {
+  /* Light Mode - Soft gray bg but dark hero overlay */
+  --bg-color: #f8fafc;
+  --text-color: #0f172a; /* Deep dark blue-gray */
+  --hero-overlay: rgba(0, 0, 0, 0.6); /* Keeps hero text readable in light mode */
+  --image-filter: brightness(0.7);
+}
+
+.dark {
+  /* Dark Mode - Deep navy/black */
+  --bg-color: #0b0f1a;
+  --text-color: #ffffff;
+  --hero-overlay: rgba(0, 0, 0, 0.85); /* Darker for high contrast */
+  --image-filter: brightness(0.5) grayscale(20%);
+}
+
+
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: inherit;
+  box-sizing: border-box; /* Use border-box here for better layout control */
 }
+
 html {
-  font-size: 62.5%;
+  font-size: 62.5%; /* 1rem = 10px */
+  scroll-behavior: smooth;
 }
+
 body {
-  box-sizing: border-box;
-  font-family: sans-serif;
+  font-family: 'Inter', sans-serif; /* A cleaner font for a pro look */
   font-weight: 400;
-  
-
-  /* background-color: rgb(51 65 85 / 1); */
-  background-color: rgb(243 244 246 / 1);
-}
-.blur{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    filter: blur(123px);
-    width: 50rem;
-    height: 30rem;
-    z-index: -2;
-    border-radius: 50%;
-    background-color: rgb(21, 37, 214);
-
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
 }
 
-/* @keyframes bounce {
-    0%, 100% {
-        transform: translateY(-25%);
-        animation-timing-function: cubic-bezier(0.8,0,1,1);
-    }
-    50% {
-        transform: none;
-        animation-timing-function: cubic-bezier(0,0,0.2,1);
-    }
+/* Your Blur Effect - Modernized */
+.blur {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Centers the blur properly */
+  filter: blur(120px);
+  width: 50rem;
+  height: 30rem;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: var(--blur-color);
+  pointer-events: none; /* Prevents blur from blocking clicks */
 }
-.animate-bounce {
-    animation: bounce 1s infinite;
-    width: 50rem;
-   
-    color: aquamarine;
-    text-align: center;
-    
-    margin-top: 4rem;
-} */

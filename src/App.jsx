@@ -1,5 +1,7 @@
 import React, { useContext } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -8,15 +10,17 @@ import PageNotFound from "./pages/PageNotFound";
 import { themeContext } from "./component/Context";
 import PageNav from "./component/PageNav";
 import Images from "./pages/Images";
-
+import Footer from "./component/Footer";
 
 const App = () => {
   const theme = useContext(themeContext);
   const darkMode = theme.state.darkMode;
+
   return (
-    <div style={{background:darkMode ? "black":"", color:darkMode ? "white":""}}>
+    // The "dark" class on this div will control the colors of all components
+    <div className={darkMode ? "dark" : ""}>
       <BrowserRouter>
-      <PageNav />
+        <PageNav />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="about" element={<About />} />
@@ -24,6 +28,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </div>
   );

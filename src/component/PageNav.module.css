@@ -1,226 +1,95 @@
 .header {
   display: flex;
   justify-content: space-between;
-  font-size: 1.5rem;
-  padding: 3rem 3rem 0 10rem;
+  align-items: center;
+  padding: 1.5rem 8%;
+  width: 100%;
+  position: fixed; /* Changed to fixed so it stays visible while scrolling */
+  top: 0;
+  left: 0;
+  z-index: 1000;
   
-  @media(min-width:401px) and (max-width: 500px) {
-  padding: 2rem 2rem 1rem 3rem;
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      padding: 2.2rem 2.2rem 1.2rem 4rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      padding: 2.4rem 2.4rem 1.5rem 5rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      padding: 2.6rem 2.6rem 1.6rem 7rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      padding: 2.8rem 2.8rem 1.8rem 8rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      padding: 2.9rem 2.9rem 1.9rem 9rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      padding: 3rem 3rem 2rem 10rem;
-      
-    }
+  /* Glassmorphism Effect */
+  background: rgba(255, 255, 255, 0.01); /* Very transparent */
+  backdrop-filter: blur(10px); /* Blurs content behind */
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
 }
-/* .left h3 > span {
-  background: linear-gradient(green, yellow, red);
-  -webkit-background-clip: text;
-  color: transparent;
-} */
-/* .left p {
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: rgb(100 116 139);
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
 
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 0.8rem;
-    letter-spacing: 0.02rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 1rem;
-    letter-spacing: 0.03rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 1.5rem;
-    letter-spacing: 0.03rem;
-      
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.7rem;
-    letter-spacing: 0.03rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.9rem;
-    letter-spacing: 0.04rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 2rem;
-    letter-spacing: 0.05rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 2rem;
-    letter-spacing: 0.055rem;
-      
-    }
-  
-} */
+.logo {
+  font-size: 2.2rem;
+  font-weight: 800;
+  text-decoration: none;
+  color: var(--text-color); /* Uses global variable */
+  letter-spacing: -1px;
+}
+
+.logoDot {
+  color: #4a90c6;
+}
+
 .nav ul {
-  list-style: none;
   display: flex;
+  list-style: none;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
 }
 
-.nav a:link,
-.nav a:visited {
+.navLink {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
   text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.number {
+  font-family: 'Courier New', monospace;
+  font-size: 0.8rem;
+  color: #4a90c6;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.label {
+  font-size: 1.2rem; /* Slightly smaller for elegance */
+  font-weight: 700;
+  color: var(--text-color); 
+  opacity: 0.6; /* Muted when not active */
   text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 600;
-  background-image: linear-gradient(
-    to left,
-    rgba(8, 186, 217, 0.9),
-    rgb(184, 200, 219)
-  );
-  display: inline-block;
-  -webkit-background-clip: text;
-  color: transparent;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 1.2rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 1.2rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 1.3rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.4rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.4rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 1.5rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 1.5rem;
-      
-    }
-}
-.name {
-  background-image: linear-gradient(
-    to left,
-    rgb(18, 238, 209),
-    rgb(27, 92, 177)
-  );
-  display: inline-block;
-  -webkit-background-clip: text;
-  color: transparent;
-  font-size: 2rem;
-  font-weight: 600;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 1.2rem;
-    /* margin-right: 4rem; */
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 1.4rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 1.6rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.7rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.8rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 1.9rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 2rem;
-      
-    }
+  letter-spacing: 1.5px;
+  transition: 0.3s;
 }
 
+/* Hover and Active States */
+.navLink:hover .label, 
+.active .label {
+  opacity: 1; /* Full brightness */
+  color: var(--text-color);
+  transform: translateY(-2px);
+}
 
-.nav li {
+.navLink:hover .number,
+.active .number {
+  color: var(--text-color); /* Number matches text color when active */
+}
+
+.toggleItem {
+  margin-left: 2rem;
   display: flex;
-  gap: 7rem;
-  font-size: inherit;
-  list-style: none;
-  text-decoration: none;
-
-
-  @media(min-width:401px) and (max-width: 500px) {
-    gap: 3rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      gap: 3.5rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      gap: 4rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      gap: 5rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      gap: 5.5rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      gap: 6rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      gap: 7rem;
-      
-    }
+  align-items: center;
 }
 
-.nav :global(.active) {
-  border: none;
-  border-bottom: 0.2rem;
-  border-bottom-color: rgb(208, 226, 234);
-  /* border-bottom-color: rgb(50, 175, 229); */
-  border-bottom-style: solid;
-  
+/* Mobile Responsive */
+@media (max-width: 850px) {
+  .header {
+    padding: 1.2rem 5%;
+  }
+  .label {
+    display: none; /* Standard pro move: hide labels on small mobile, show numbers only */
+  }
+  .number {
+    font-size: 1.2rem;
+  }
 }

@@ -1,399 +1,130 @@
-.main {
-  height: 100vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: center;
-  padding-left: 10rem;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    grid-template-columns: 1fr;
-    padding-left: 15rem;
-  }
-
-  @media(min-width:501px) and (max-width: 600px) {
-    grid-template-columns: 1fr;
-    padding-left: 15rem;
-
-  }
-  @media(min-width:601px) and (max-width: 700px) {
-    grid-template-columns: 1fr 1fr;
-    padding-left: 15rem;
-
-  }
- 
-}
-
-.left h1 {
-  font-size: 6rem;
-  background: linear-gradient(rgba(0, 82, 115, 0.161), rgb(74, 144, 198));
-  -webkit-background-clip: text;
-  color: transparent;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  animation-name: moveInRight;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  @media(min-width:401px) and (max-width: 500px) {
-  font-size: 4rem;
-  letter-spacing: 0.02rem;
-
-  }
-
-  @media(min-width:501px) and (max-width: 600px) {
-    font-size: 4.5rem;
-  letter-spacing: 0.03rem;
-
-  }
-  @media(min-width:601px) and (max-width: 700px) {
-    font-size: 4.7rem;
-  letter-spacing: 0.03rem;
-    /* gap: 4rem; */
-
-  }
-  @media(min-width:701px) and (max-width: 800px) {
-    font-size: 5rem;
-  letter-spacing: 0.03rem;
-  }
-  @media (min-width:801px) and (max-width: 900px) {
-    font-size: 5.3rem;
-  letter-spacing: 0.04rem;
-    
-  }
-  @media (min-width:901px) and (max-width: 970px) {
-    font-size: 6rem;
-  letter-spacing: 0.05rem;
-    
-  }
-  @media (min-width:971px) and (max-width: 1250px) {
-    font-size: 6.3rem;
-  letter-spacing: 0.055rem;
-    
-  }
-}
-.left h2 {
-  font-size: 3rem;
-  color: rgb(32, 34, 35);
-  margin-top: 1rem;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  /* color: rgb(43, 49, 58); */
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 2rem;
-    letter-spacing: 0.02rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 2.2rem;
-    letter-spacing: 0.03rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 2.5rem;
-    letter-spacing: 0.03rem;
-      
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 2.6rem;
-    letter-spacing: 0.03rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 2.8rem;
-    letter-spacing: 0.04rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 3rem;
-    letter-spacing: 0.05rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 3.2rem;
-    letter-spacing: 0.055rem;
-      
-    }
-}
-.left h3 {
-  font-size: 1.5rem;
-  margin-top: 1rem;
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  color: rgba(93, 106, 110, 0.995);
-
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 0.8rem;
-    letter-spacing: 0.02rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 1.2rem;
-    letter-spacing: 0.03rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 1.3rem;
-    letter-spacing: 0.03rem;
-      
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.4rem;
-    letter-spacing: 0.03rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.4rem;
-    letter-spacing: 0.04rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 1.5rem;
-    letter-spacing: 0.05rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 1.5rem;
-    letter-spacing: 0.055rem;
-      
-    }
-}
-.left h3 > span {
-  background: linear-gradient(green, yellow, red);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-.left p {
-  font-size: 2rem;
-  margin-top: 1rem;
-  color: rgb(100 116 139);
-  letter-spacing: 0.05rem;
-  text-transform: capitalize;
-  animation-name: moveInBottom;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 0.8rem;
-    letter-spacing: 0.02rem;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 1rem;
-    letter-spacing: 0.03rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 1.5rem;
-    letter-spacing: 0.03rem;
-      /* gap: 4rem; */
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.7rem;
-    letter-spacing: 0.03rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.9rem;
-    letter-spacing: 0.04rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 2rem;
-    letter-spacing: 0.05rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 2rem;
-    letter-spacing: 0.055rem;
-      
-    }
-}
-.link {
+.heroSection {
+  /* Changed height to min-height so content can push past it */
+  min-height: 100vh;
   display: flex;
-  gap: 2rem;
-  font-size: 2.5rem;
-  margin-top: 2rem;
-  color: #345;
-  transition: all 0.5s linear;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  gap: 4rem;
+  overflow: hidden; /* Keeps animations clean */
 }
-.link a:hover {
-  transform: scale(1.2);
-}
-.right img {
-  width: 50rem;
-  height: 50rem;
-  transition: all 1s linear;
-  animation-name: moveInLeft;
-  animation-duration: 1s;
-  animation-timing-function: ease-out;
 
-  @media(min-width:401px) and (max-width: 500px) {
-    width: 0;
-    height: 0;
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      width: 0;
-    height: 0;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      width: 30rem;
-    height: 30rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      width: 40rem;
-      height: 40rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      width: 44rem;
-      height: 44rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      width: 50rem;
-      height: 50rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      width: 50rem;
-      height: 50rem;
-      
-    }
+.content {
+  flex: 1;
+}
+
+.content h1 {
+  font-size: clamp(3rem, 8vw, 6rem); /* Responsive font size without 10 media queries */
+  background: linear-gradient(135deg, rgba(0, 82, 115, 0.4), rgb(74, 144, 198));
+  -webkit-background-clip: text;
+  color: transparent;
+  text-transform: capitalize;
+  animation: moveInRight 1s ease-out;
+}
+
+.content h2 {
+  font-size: clamp(1.5rem, 4vw, 3rem);
+  margin: 1rem 0;
+  animation: moveInBottom 1s ease-out 0.2s backwards;
+}
+
+.content p {
+  font-size: 1.2rem;
+  color: #64748b;
+  margin-bottom: 2rem;
+  animation: moveInBottom 1s ease-out 0.4s backwards;
+}
+
+/* Social Icons Container */
+.socialLinks {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.socialLinks a {
+  font-size: 2rem;
+  color: #334455;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.socialLinks a:hover {
+  transform: translateY(-5px);
+  color: #4a90c6;
+}
+
+/* Professional Button Style */
+.resumeBtn {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: #4a90c6;
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgba(74, 144, 198, 0.2);
+}
+
+.resumeBtn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 25px rgba(74, 144, 198, 0.3);
+  background-color: #3b7fb3;
+}
+
+/* Right Side Image */
+.imageWrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.imageWrapper img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Trendy organic shape */
+  animation: moveInLeft 1s ease-out, morph 8s ease-in-out infinite;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes morph {
+  0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+  50% { border-radius: 50% 50% 20% 80% / 25% 80% 20% 75%; }
+  100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
 }
 
 @keyframes moveInRight {
-  0% {
-    opacity: 0;
-    transform: translateX(10rem);
-  }
-  80% {
-    transform: translateX(-1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes moveInLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-10rem);
-  }
-  80% {
-    transform: translateX(1rem);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0);
-  }
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
+
 @keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem);
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* --- RESPONSIVE DESIGN (Simplified) --- */
+@media (max-width: 900px) {
+  .heroSection {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 100px 5%;
+    justify-content: center;
   }
-  100% {
-    opacity: 1;
-    transform: translate(0);
+  
+  .socialLinks {
+    justify-content: center;
   }
-}
-
-.btn,
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  padding: 1.5rem 3rem;
-  margin-top: 1rem;
-  border-radius: 10rem;
-  transition: all 0.2s;
-  position: relative;
-  font-size: 1.6rem;
-  cursor: pointer;
-  border: none;
-  background-color: rgba(85, 163, 197, 0.416);
-  color: #fff;
-
-  @media(min-width:401px) and (max-width: 500px) {
-    font-size: 0.7rem;
-  padding: 1rem 2rem;
   
-  
-    }
-  
-    @media(min-width:501px) and (max-width: 600px) {
-      font-size: 0.8rem;
-  padding: 1.2rem 2.2rem;
-  
-    }
-    @media(min-width:601px) and (max-width: 700px) {
-      font-size: 0.9rem;
-  padding: 1.3rem 2,4rem;
-  
-    }
-    @media(min-width:701px) and (max-width: 800px) {
-      font-size: 1.2rem;
-  padding: 1.4rem 2.6rem;
-    }
-    @media (min-width:801px) and (max-width: 900px) {
-      font-size: 1.3rem;
-  padding: 1.5rem 2.8rem;
-      
-    }
-    @media (min-width:901px) and (max-width: 970px) {
-      font-size: 1.5rem;
-      padding: 1.5rem 3rem;
-      
-    }
-    @media (min-width:971px) and (max-width: 1250px) {
-      font-size: 1.5rem;
-      padding: 1.5rem 3rem;
-      
-    }
-}
-
-.btn:hover {
-  transform: translateY(-0.3rem);
-}
-.btn:hover::after {
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
-}
-
-.btn::after {
-  content: "";
-  display: inline-block;
-  border-radius: 10rem;
-  height: 100%;
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  transition: all 0.4s;
-  z-index: -1;
-  background-color: rgba(85, 171, 197, 0.405);
-}
-
-.btn:active,
-.btn:focus {
-  outline: none;
-  transform: translateY(-0.1rem);
-  /* box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); */
-  /* box-shadow: 1rem 1rem 5rem 1rem rgba(239, 214, 28, 0.905); */
+  .imageWrapper img {
+    max-width: 300px;
+    margin-bottom: 2rem;
+  }
 }
