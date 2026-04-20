@@ -11,6 +11,7 @@ import { themeContext } from "./component/Context";
 import PageNav from "./component/PageNav";
 import Images from "./pages/Images";
 import Footer from "./component/Footer";
+import SideSocials from "./SideScoials";
 
 const App = () => {
   const theme = useContext(themeContext);
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
+        <SideSocials />
         <Footer />
       </BrowserRouter>
     </div>

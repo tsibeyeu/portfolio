@@ -1,19 +1,23 @@
 .section {
   padding: 120px 0;
-  background: #0b0f1a; /* Your deep dark blue */
+  /* Use global variables for automatic switching */
+  background: var(--bg-color); 
+  color: var(--text-color);
   position: relative;
   overflow: hidden;
-  color: #ffffff; /* Global white text */
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-/* Background "Ghost" text - made it slightly more visible but still subtle */
+/* Background "Ghost" text - subtle in both modes */
 .bgText {
   position: absolute;
   top: 5%;
   left: -2%;
   font-size: 20rem;
   font-weight: 900;
-  color: rgba(255, 255, 255, 0.03); 
+  /* Uses a very transparent version of the text color */
+  color: var(--text-color);
+  opacity: 0.03;
   z-index: 0;
   user-select: none;
 }
@@ -26,7 +30,6 @@
   z-index: 1;
 }
 
-/* Header Styling */
 .tagLine {
   display: flex;
   align-items: center;
@@ -35,20 +38,19 @@
 }
 
 .number { font-family: monospace; color: #4a90c6; font-weight: bold; font-size: 1.4rem; }
-.line { width: 40px; height: 1px; background: #4a90c6; } /* Accent colored line */
+.line { width: 40px; height: 1px; background: #4a90c6; }
 .category { font-size: 1rem; letter-spacing: 4px; color: #4a90c6; font-weight: 600; }
 
 .mainTitle {
-  font-size: clamp(3rem, 6vw, 5rem); /* Bigger Title */
+  font-size: clamp(3rem, 6vw, 5rem);
   line-height: 1.1;
   max-width: 850px;
   margin-bottom: 5rem;
-  color: #ffffff; /* Pure white */
+  color: var(--text-color); /* Changes to dark blue-gray in Light Mode */
 }
 
 .mainTitle span { color: #4a90c6; }
 
-/* Grid Layout */
 .mainGrid {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -57,50 +59,47 @@
 }
 
 .leadText {
-  font-size: 2.2rem; /* Larger font */
-  color: #ffffff; /* Pure white for high impact */
+  font-size: 2.2rem;
+  color: var(--text-color);
   margin-bottom: 2rem;
   line-height: 1.4;
   font-weight: 500;
 }
 
 .bodyText {
-  font-size: 1.4rem; /* Scaled up from 1.1rem */
-  color: #e2e8f0; /* Much brighter gray (Slate 200) */
+  font-size: 1.4rem;
+  /* Uses muted variable for descriptions */
+  color: var(--text-muted); 
   line-height: 1.7;
   margin-bottom: 3rem;
-}
-
-.badgeContainer {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
 }
 
 .badge {
   padding: 8px 20px;
   border: 1px solid #4a90c6;
-  background: rgba(74, 144, 198, 0.1); /* Subtle blue tint */
+  background: rgba(74, 144, 198, 0.05);
   border-radius: 100px;
-  font-size: 0.9rem; /* Bigger badge text */
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #ffffff; /* White text on blue border */
+  color: #4a90c6; /* Blue text for better readability in light */
   letter-spacing: 1px;
 }
 
-/* Tech Card / Bento Style */
+/* --- TECH CARD (The Bento Box) --- */
 .techCard {
-  background: rgba(15, 23, 42, 0.8); /* Solid dark blue */
-  border: 1px solid rgba(74, 144, 198, 0.3); /* Blue tinted border */
+  /* Dynamic background and border */
+  background: var(--card-bg); 
+  border: 1px solid var(--border-color);
   padding: 3rem;
   border-radius: 30px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+  /* Shadow is softer in light mode via global variable or direct rgba */
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1); 
 }
 
 .techCard h3 {
   font-size: 1.1rem;
   letter-spacing: 3px;
-  color: #ffffff; /* High contrast header */
+  color: var(--text-color);
   margin-bottom: 3rem;
   text-align: center;
   font-weight: 700;
@@ -113,21 +112,22 @@
 }
 
 .skillNode img {
-  width: 50px; /* Slightly larger */
-  filter: brightness(1.2); /* Make logos pop */
+  width: 50px;
+  /* Remove grayscale in light mode for vibrance */
+  filter: grayscale(0.2);
   transition: 0.3s;
 }
 
 .skillNode:hover img {
   transform: scale(1.1);
-  filter: brightness(1.5);
+  filter: grayscale(0) brightness(1.1);
 }
 
 .tooltip {
   position: absolute;
   bottom: -35px;
-  background: #ffffff; /* White background for tooltip */
-  color: #0b0f1a; /* Dark text for tooltip */
+  background: #0b0f1a;
+  color: #ffffff;
   font-size: 0.8rem;
   font-weight: 800;
   padding: 4px 12px;
@@ -141,5 +141,4 @@
 @media (max-width: 1000px) {
   .mainGrid { grid-template-columns: 1fr; }
   .bgText { display: none; }
-  .section { padding: 80px 0; }
 }

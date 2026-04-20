@@ -13,19 +13,17 @@ const Toogle = () => {
   };
 
   return (
-    <div className={style.toggleWrapper} onClick={handleToggle}>
-      <BsMoon className={style.icon} />
-      <BiSun className={style.icon} />
-      {/* The sliding ball */}
-      <div
-        className={style.ball}
-        style={
-          darkMode
-            ? { transform: "translateX(0px)" }
-            : { transform: "translateX(28px)" }
-        }
-      ></div>
-    </div>
+    <button
+      className={`${style.toggleBtn} ${darkMode ? style.dark : style.light}`}
+      onClick={handleToggle}
+      aria-label="Toggle Theme"
+    >
+      <div className={style.iconContainer}>
+        <BsMoon className={style.moonIcon} />
+        <BiSun className={style.sunIcon} />
+      </div>
+      <div className={style.background}></div>
+    </button>
   );
 };
 

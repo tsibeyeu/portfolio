@@ -10,11 +10,14 @@
   z-index: 1000;
   
   /* Glassmorphism Effect */
-  background: rgba(255, 255, 255, 0.01); /* Very transparent */
-  backdrop-filter: blur(10px); /* Blurs content behind */
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-  transition: all 0.3s ease;
+  
+  /* ... rest of your code ... */
+  background: var(--nav-glass); /* Dynamic background */
+  border-bottom: 1px solid var(--nav-border); /* Dynamic border */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+
 }
 
 .logo {

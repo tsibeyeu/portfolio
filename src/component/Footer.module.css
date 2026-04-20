@@ -1,10 +1,12 @@
 .footerSection {
   padding: 80px 0 60px;
-  background: #0b0f1a;
-  color: #fff;
+  /* Use global variables for automatic theme switching */
+  background: var(--bg-color);
+  color: var(--text-color);
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -17,6 +19,7 @@
 .line {
   width: 1px;
   height: 120px;
+  /* Gradient always fades from transparent to your accent blue */
   background: linear-gradient(to bottom, rgba(74, 144, 198, 0), #4a90c6);
   margin-bottom: 60px;
 }
@@ -30,18 +33,24 @@
 .ctaText {
   font-size: clamp(2.5rem, 6vw, 4rem);
   font-weight: 900;
-  color: #94a3b8;
+  /* Muted text color for the first half of the heading */
+  color: var(--text-muted);
   margin-bottom: 3rem;
   line-height: 1.1;
 }
 
-.ctaText span { color: #ffffff; }
+/* Highlighted half of the heading */
+.ctaText span { 
+  color: var(--text-color); 
+}
 
+/* THE BUTTON: Dynamic High Contrast */
 .modernBtn {
   display: inline-block;
   padding: 1.2rem 3.5rem;
-  background: #ffffff;
-  color: #0b0f1a;
+  /* Button is dark in Light Mode, white in Dark Mode */
+  background: var(--text-color); 
+  color: var(--bg-color);
   text-decoration: none;
   border-radius: 100px;
   font-weight: 800;
@@ -52,7 +61,7 @@
 
 .modernBtn:hover {
   background: #4a90c6;
-  color: #fff;
+  color: #ffffff; /* Always white on hover for blue accent */
   transform: translateY(-5px);
   box-shadow: 0 20px 40px rgba(74, 144, 198, 0.3);
 }
@@ -63,14 +72,15 @@
   justify-content: space-between;
   align-items: flex-end;
   padding-top: 60px;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  /* Border color changes based on theme */
+  border-top: 1px solid var(--border-color);
 }
 
 .logo {
   font-size: 1.8rem;
   font-weight: 800;
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
 }
 
 .logo span { color: #4a90c6; }
@@ -78,7 +88,7 @@
 .tagline {
   font-family: monospace;
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
   margin-top: 5px;
 }
 
@@ -94,7 +104,7 @@
 }
 
 .socials a {
-  color: #94a3b8;
+  color: var(--text-muted);
   font-size: 1.5rem;
   transition: 0.3s;
 }
@@ -103,7 +113,7 @@
 
 .copy {
   font-size: 0.8rem;
-  color: #64748b;
+  color: var(--text-muted);
 }
 
 /* Mobile responsive */

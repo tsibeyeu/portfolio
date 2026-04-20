@@ -1,5 +1,4 @@
 import React from "react";
-import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { pro } from "./images";
 import style from "./Hero.module.css";
 
@@ -7,12 +6,11 @@ const Hero = () => {
   return (
     <section className={style.heroSection}>
       <div className={style.bgWrapper}>
-        <img src={pro} alt="" className={style.bgImage} />
+        <img src={pro} alt="Developer Background" className={style.bgImage} />
         <div className={style.overlay}></div>
       </div>
 
       <div className={style.gridContainer}>
-        {/* LEFT COLUMN: Large Text */}
         <div className={style.leftSide}>
           <h1 className={style.name}>
             TSI<span>ON</span>
@@ -23,36 +21,64 @@ const Hero = () => {
           <p className={style.description}>
             Turning ideas into interactive reality with modern tech stacks.
           </p>
-          <div className={style.ctaGroup}>
-            {/* High-Impact Button */}
-            <a href="Tsion Resume.pdf" className={style.premiumBtn} download>
-              <span className={style.btnText}>Grab My Resume</span>
-              <div className={style.btnArrow}>→</div>
-            </a>
 
-            {/* Bold Text Socials */}
+          <div className={style.ctaGroup}>
+            <div className={style.actionButtons}>
+              {/* Primary: Download Button */}
+              <a
+                href="/Tsion Resume.pdf"
+                className={style.premiumBtn}
+                download="Tsion_Beyene_Resume.pdf"
+              >
+                <span className={style.btnText}>Grab My Resume</span>
+                <div className={style.btnArrow}>→</div>
+              </a>
+
+              {/* Secondary: View Link */}
+              <a
+                href="/Tsion Resume.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className={style.viewResumeLink}
+              >
+                View CV
+              </a>
+            </div>
+
             <div className={style.boldSocials}>
-              <a href="https://github.com" data-name="GITHUB">
+              <a
+                href="https://github.com"
+                target="_blank"
+                rel="noreferrer"
+                data-name="GITHUB"
+              >
                 GH
               </a>
-              <a href="https://linkedin.com" data-name="LINKEDIN">
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                data-name="LINKEDIN"
+              >
                 LN
               </a>
-              <a href="https://x.com" data-name="TWITTER">
+              <a
+                href="https://x.com"
+                target="_blank"
+                rel="noreferrer"
+                data-name="TWITTER"
+              >
                 TW
               </a>
             </div>
           </div>
         </div>
 
-        {/* RIGHT COLUMN: Visual Balance */}
-        {/* RIGHT COLUMN: Visual Balance */}
         <div className={style.rightSide}>
           <div className={style.visualCard}>
             <div className={style.glow}></div>
-            {/* New content inside the card */}
             <div className={style.cardContent}>
-              <span className={style.greeting}>Hello Client! 👋</span>
+              <span className={style.greeting}>Hello There! 👋</span>
               <p className={style.subText}>
                 Let's build something amazing together.
               </p>

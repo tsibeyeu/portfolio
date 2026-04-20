@@ -1,26 +1,37 @@
 :root {
-  /* Light Mode - Soft gray bg but dark hero overlay */
+  /* --- Light Mode --- */
   --bg-color: #f8fafc;
-  --text-color: #0f172a; /* Deep dark blue-gray */
-  --hero-overlay: rgba(0, 0, 0, 0.6); /* Keeps hero text readable in light mode */
-  --image-filter: brightness(0.7);
+  --text-color: #0f172a;
+  --text-muted: #475569; /* Added: Dark gray for light mode paragraphs */
+  --nav-glass: rgba(255, 255, 255, 0.7); 
+  --nav-border: rgba(0, 0, 0, 0.05);
+  
+  /* Added these for your Apple Cards and Bento Tech Box */
+  --card-bg: #ffffff; 
+  --border-color: rgba(0, 0, 0, 0.08);
+  --blur-color: rgba(74, 144, 198, 0.2); /* Softer blue blur for light mode */
 }
 
 .dark {
-  /* Dark Mode - Deep navy/black */
+  /* --- Dark Mode --- */
   --bg-color: #0b0f1a;
   --text-color: #ffffff;
-  --hero-overlay: rgba(0, 0, 0, 0.85); /* Darker for high contrast */
-  --image-filter: brightness(0.5) grayscale(20%);
-}
+  --text-muted: #94a3b8; /* Added: Light blue-gray for dark mode descriptions */
+  --nav-glass: rgba(11, 15, 26, 0.6); 
+  --nav-border: rgba(255, 255, 255, 0.05);
 
+  /* Added these for your Apple Cards and Bento Tech Box */
+  --card-bg: rgba(255, 255, 255, 0.02); 
+  --border-color: rgba(255, 255, 255, 0.08);
+  --blur-color: rgba(74, 144, 198, 0.3); /* Stronger blue blur for dark mode */
+}
 
 *,
 *::before,
 *::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Use border-box here for better layout control */
+  box-sizing: border-box;
 }
 
 html {
@@ -29,25 +40,26 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif; /* A cleaner font for a pro look */
+  font-family: 'Inter', sans-serif;
   font-weight: 400;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.4s ease, color 0.4s ease;
   overflow-x: hidden;
 }
 
-/* Your Blur Effect - Modernized */
+/* Global Blur Effect */
 .blur {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%); /* Centers the blur properly */
+  transform: translate(-50%, -50%);
   filter: blur(120px);
   width: 50rem;
   height: 30rem;
   z-index: -1;
   border-radius: 50%;
   background-color: var(--blur-color);
-  pointer-events: none; /* Prevents blur from blocking clicks */
+  pointer-events: none;
+  transition: background-color 0.4s ease;
 }

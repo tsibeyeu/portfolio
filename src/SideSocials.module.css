@@ -1,0 +1,39 @@
+/* SideSocials.module.css */
+.socialBar {
+  position: fixed;
+  bottom: 0;
+  left: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  z-index: 100;
+  animation: slideUp 1s ease-out;
+}
+
+.socialBar a {
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.socialBar a:hover {
+  color: #4a90c6;
+  transform: translateY(-5px);
+}
+
+.verticalLine {
+  width: 1px;
+  height: 90px;
+  background-color: #4a90c6;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(100px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hide on mobile to keep the screen clean */
+@media (max-width: 768px) {
+  .socialBar { display: none; }
+}

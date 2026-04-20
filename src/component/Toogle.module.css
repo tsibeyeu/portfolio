@@ -1,36 +1,73 @@
-.toggleWrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 60px;
-  height: 32px;
-  border: 2px solid rgba(74, 144, 198, 0.5); /* Matching your blue accent */
-  border-radius: 50px;
-  padding: 0 5px;
+.toggleBtn {
   position: relative;
+  width: 45px;
+  height: 45px;
+  border-radius: 12px; /* Sleek rounded square */
+  border: 1px solid rgba(74, 144, 198, 0.2);
+  background: rgba(255, 255, 255, 0.03);
   cursor: pointer;
-  background: rgba(15, 23, 42, 0.5); /* Subtle dark background */
-  transition: all 0.3s ease;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
 }
 
-.toggleWrapper:hover {
+.toggleBtn:hover {
   border-color: #4a90c6;
-  box-shadow: 0 0 10px rgba(74, 144, 198, 0.2);
+  background: rgba(74, 144, 198, 0.1);
+  transform: translateY(-2px);
 }
 
-.icon {
-  font-size: 1rem;
-  color: #f1c40f; /* Nice sun/moon yellow */
-  z-index: 1;
+.iconContainer {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  z-index: 2;
 }
 
-.ball {
+.moonIcon, .sunIcon {
   position: absolute;
-  left: 3px;
-  width: 24px;
-  height: 24px;
-  background: #4a90c6;
-  border-radius: 50%;
-  transition: transform 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55); /* Bouncy effect */
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Light Mode State */
+.light .moonIcon {
+  transform: translateY(30px) rotate(45deg);
+  opacity: 0;
+}
+.light .sunIcon {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+  color: #f1c40f;
+}
+
+/* Dark Mode State */
+.dark .sunIcon {
+  transform: translateY(-30px) rotate(-45deg);
+  opacity: 0;
+}
+.dark .moonIcon {
+  transform: translateY(0) rotate(0);
+  opacity: 1;
+  color: #f8f9fa;
+}
+
+/* Subtle glow effect behind icons */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(74, 144, 198, 0.1) 0%, transparent 70%);
+  z-index: 1;
+  transition: opacity 0.3s;
+}
+
+.toggleBtn:active {
+  transform: scale(0.9);
 }

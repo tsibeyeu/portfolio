@@ -1,8 +1,10 @@
 .section {
   padding: 150px 0;
-  background: #0b0f1a;
+  /* Swaps automatically based on theme context */
+  background: var(--bg-color);
+  color: var(--text-color);
   min-height: 100vh;
-  color: #fff;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 .container {
@@ -20,20 +22,23 @@
   color: #4a90c6;
   letter-spacing: 3px;
   font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .title {
   font-size: clamp(2.5rem, 6vw, 4.5rem);
   font-weight: 800;
   margin: 1rem 0;
+  color: var(--text-color);
 }
 
 .title span { color: #4a90c6; }
 
 .lead {
   font-size: 1.2rem;
-  color: #94a3b8;
+  color: var(--text-muted);
   max-width: 600px;
+  line-height: 1.6;
 }
 
 /* --- GRID LAYOUT --- */
@@ -64,26 +69,34 @@
 }
 
 .form input, .form textarea {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  /* Uses your dynamic card background */
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   padding: 1.2rem;
   border-radius: 12px;
-  color: #fff;
+  color: var(--text-color);
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }
 
-.form input:focus, .form textarea:focus {
-  outline: none;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: #4a90c6;
-  box-shadow: 0 0 20px rgba(74, 144, 198, 0.1);
+/* Dynamic placeholder color */
+.form input::placeholder, .form textarea::placeholder {
+  color: var(--text-muted);
+  opacity: 0.6;
 }
 
+.form input:focus, .form textarea:focus {
+  outline: none;
+  background: var(--card-bg);
+  border-color: #4a90c6;
+  box-shadow: 0 0 20px rgba(74, 144, 198, 0.15);
+}
+
+/* THE BUTTON: Inverts color based on theme */
 .submitBtn {
   padding: 1.2rem 3rem;
   background: #4a90c6;
-  color: #fff;
+  color: #ffffff; /* Always white text on blue background */
   border: none;
   border-radius: 100px;
   font-size: 1.1rem;
@@ -95,9 +108,15 @@
 
 .submitBtn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 20px rgba(74, 144, 198, 0.2);
-  background: #fff;
-  color: #0b0f1a;
+  box-shadow: 0 10px 25px rgba(74, 144, 198, 0.3);
+  /* Hover effect turns button white in dark mode, black in light mode */
+  background: var(--text-color);
+  color: var(--bg-color);
+}
+
+.submitBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 /* --- SIDE INFO --- */
@@ -108,14 +127,16 @@
 .infoBlock h4 {
   font-size: 0.8rem;
   text-transform: uppercase;
-  color: #64748b;
+  color: var(--text-muted);
   margin-bottom: 0.5rem;
   letter-spacing: 2px;
+  font-weight: 700;
 }
 
 .infoBlock p {
   font-size: 1.4rem;
   font-weight: 600;
+  color: var(--text-color);
 }
 
 .socialLinks {
@@ -126,16 +147,18 @@
 
 .socialLinks a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text-color);
   font-weight: 700;
   transition: 0.3s;
 }
 
 .socialLinks a:hover { color: #4a90c6; }
 
-.success { color: #10b981; font-weight: 600; margin-top: 1rem; }
+.success { color: #10b981; font-weight: 600; margin-top: 1.5rem; font-size: 1.1rem; }
+.error { color: #ef4444; font-weight: 600; margin-top: 1.5rem; font-size: 1.1rem; }
 
 @media (max-width: 900px) {
   .contactGrid { grid-template-columns: 1fr; gap: 5rem; }
   .section { padding: 100px 0; }
+  .submitBtn { width: 100%; align-self: stretch; }
 }
