@@ -4,7 +4,8 @@ import {
   contact,
   css,
   estate,
-  express,
+  php,
+  express1,
   git,
   github,
   html,
@@ -33,7 +34,26 @@ export const skills = [
     name: "CSS",
     type: "Frontend",
   },
-
+  {
+    imageUrl: php,
+    name: "PHP",
+    type: "Backend",
+  },
+  {
+    imageUrl: express1,
+    name: "Express.js",
+    type: "Backend",
+  },
+  {
+    imageUrl: motion,
+    name: "Framer Motion",
+    type: "Frontend",
+  },
+  {
+    imageUrl: nodejs,
+    name: "Node.js",
+    type: "Backend",
+  },
   {
     imageUrl: git,
     name: "Git",
